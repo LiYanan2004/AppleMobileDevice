@@ -29,6 +29,7 @@ public extension AppleMobileDeviceManager {
     }
 
     class DeviceRecord: CodableRecord {
+        public override var id: String { uniqueDeviceID ?? UUID().uuidString }
         public var activationState: String? { valueFor("ActivationState") }
         public var activationStateAcknowledged: Bool? { valueFor("ActivationStateAcknowledged") }
         public var basebandActivationTicketVersion: String? { valueFor("BasebandActivationTicketVersion") }

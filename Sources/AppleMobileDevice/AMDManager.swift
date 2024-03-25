@@ -21,7 +21,7 @@ public class AppleMobileDeviceManager {
     public static var configuration: Configuration = .init()
 
     public class CodableRecord: Codable, Equatable, Hashable, Identifiable {
-        public var id: UUID = .init()
+        public var id: String { UUID().uuidString }
 
         public internal(set) var store: AnyCodable
         public init() { store = .init([String: String]()) }
